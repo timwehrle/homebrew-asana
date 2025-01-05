@@ -1,6 +1,6 @@
 require "formula"
 
-class AsanaCLI < Formula
+class AsanaCli < Formula
   desc "A command-line interface for managing Asana directly from your terminal."
   homepage "https://github.com/timwehrle/asana"
   url 'https://github.com/timwehrle/asana.git', 
