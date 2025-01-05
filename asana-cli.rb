@@ -1,6 +1,6 @@
 require "formula"
 
-class Asana < Formula
+class AsanaCLI < Formula
   desc "A command-line interface for managing Asana directly from your terminal."
   homepage "https://github.com/timwehrle/asana"
   url 'https://github.com/timwehrle/asana.git', 
@@ -11,10 +11,10 @@ class Asana < Formula
   depends_on 'go' => :build
 
   def install
-    system "go", "build", "-o", bin/"asana"
+    system "go", "build", "-o", bin/"asana-cli"
   end
 
   test do
-    system "#{bin}/asana", "--version"
+    system "#{bin}/asana-cli", "--version"
   end
 end
