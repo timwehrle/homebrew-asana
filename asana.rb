@@ -5,21 +5,21 @@
 class Asana < Formula
   desc "A command-line interface for managing Asana directly from your terminal."
   homepage "https://github.com/timwehrle/asana"
-  version "0.1.5"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/timwehrle/asana/releases/download/v0.1.5/asana_Darwin_x86_64.tar.gz"
-      sha256 "0e0537500bea97283537f58576a1ae283355db5ff3cf158d80895716bde8e6b1"
+      url "https://github.com/timwehrle/asana/releases/download/v1.0.0/asana_Darwin_x86_64.tar.gz"
+      sha256 "6ca4a6b8b53d4e48919ae8a7376024f2876fed0755a0e80e1f0880b05474855e"
 
       def install
         bin.install "asana"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/timwehrle/asana/releases/download/v0.1.5/asana_Darwin_arm64.tar.gz"
-      sha256 "99f7a061ec636df73c74a5b4efd5cc7fab0625b58a377c1d47e6097cab3440d9"
+      url "https://github.com/timwehrle/asana/releases/download/v1.0.0/asana_Darwin_arm64.tar.gz"
+      sha256 "5bc7af0527e0e75546a405c0eb56675ceeb2a0233eb6c53c56f097697e0d7164"
 
       def install
         bin.install "asana"
@@ -28,34 +28,25 @@ class Asana < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/timwehrle/asana/releases/download/v0.1.5/asana_Linux_x86_64.tar.gz"
-        sha256 "4b5a44694a509e08b886a59def95947a9cf27b9d51893a17cda67bb5dc196f70"
-
-        def install
-          bin.install "asana"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/timwehrle/asana/releases/download/v1.0.0/asana_Linux_x86_64.tar.gz"
+      sha256 "dc2caddb6ddf616e6ec655d1362ad4af33d2f28f06b2a98592fbb36a0ac59509"
+      def install
+        bin.install "asana"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/timwehrle/asana/releases/download/v0.1.5/asana_Linux_armv6.tar.gz"
-        sha256 "116147ca911c294412756ed2c4b08dca53eb1e86864f02c79d2faf7e919f2a84"
-
-        def install
-          bin.install "asana"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/timwehrle/asana/releases/download/v1.0.0/asana_Linux_armv6.tar.gz"
+      sha256 "85fca87faaa045c5cb9419bea48e37661b1287784ef4bcb867ed24041e7d0015"
+      def install
+        bin.install "asana"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/timwehrle/asana/releases/download/v0.1.5/asana_Linux_arm64.tar.gz"
-        sha256 "6d890a26f162debc17d2086a99f1ad61391d5694d09a0c9fd5579e3cf752248b"
-
-        def install
-          bin.install "asana"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/timwehrle/asana/releases/download/v1.0.0/asana_Linux_arm64.tar.gz"
+      sha256 "f275b604c528f79fa3720439d1d53b146423b27bf60e46aa699c0463b6ba91a2"
+      def install
+        bin.install "asana"
       end
     end
   end
